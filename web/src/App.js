@@ -12,6 +12,9 @@ import './Main.css';
 // Estado: Informações mantida pelo componente (Lembrar: imutabilidade)
 
 function App() {
+  const [github_username, setGithubusername] = useState('');
+  const [techs, setTechs] = useState('');
+
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');  
 
@@ -33,30 +36,61 @@ function App() {
     )
   },[]);
 
+  async function handleAddDev(e) {
+    e.preventDefault();
+    
+  }
+
   return (
     <div id="app">
       <aside>
         <strong>Cadastrar</strong>
-          <form>
+          <form onSubmit={handleAddDev}>
             <div className="input-block">
               <label htmlFor="github_username">Usuário do Github</label>
-              <input name="github_username" id="username_github" required />
+              <input 
+              name="github_username" 
+              id="username_github" 
+              required
+              value={github_username}
+              onChange={e => setGithubusername(e.target.value)}
+            />
             </div>
 
             <div className="input-block">
               <label htmlFor="techs">Tecnologias</label>
-              <input name="techs" id="techs" required />
+              <input 
+              name="techs" 
+              id="techs" 
+              required
+              value={techs}
+              onChange={e => setTechs(e.target.value)}
+            />
             </div>
 
             <div className="input-group">
               <div className="input-block">
                 <label htmlFor="latitude">Latitude</label>
-                <input type="number" name="latitude" id="latitude" required value={latitude} />
+                <input 
+                  type="number" 
+                  name="latitude" 
+                  id="latitude" 
+                  required 
+                  value={latitude} 
+                  onChange={e => setLatitude(e.target.value)}
+                />
               </div>
 
               <div className="input-block">
                 <label htmlFor="longitude">Longitude</label>
-                <input type="number" name="longitude" id="longitude" required value={longitude} />
+                <input 
+                  type="number" 
+                  name="longitude" 
+                  id="longitude" 
+                  required 
+                  value={longitude} 
+                  onChange={e => setLongitude(e.target.value)}
+                />
               </div>
             </div>
 
