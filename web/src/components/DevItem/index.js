@@ -1,8 +1,11 @@
 import React from 'react';
 
+import './styles.css';
+
 function DevItem({ dev }) {
+
     return (
-        <li key={dev._id} className="dev-item">
+        <li className="dev-item">
             <header>
                 <img src={dev.avatar_url} alt={dev.name} />
                 <div className="user-info">
