@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Image, View, Text } from 'react-native'; 
+import { StyleSheet, Image, View, Text, TextInput } from 'react-native'; 
 import MapView, { Marker, Callout } from 'react-native-maps'; 
 import { requestPermissionsAsync, getCurrentPositionAsync } from "expo-location";
 
