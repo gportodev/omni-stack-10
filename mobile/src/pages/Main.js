@@ -37,22 +37,27 @@ function Main({ navigation }) {
     }
 
     return ( 
-        <MapView initialRegion={currentRegion} style={{ flex: 1 }}>
-            <Marker coordinate={ { latitude: -16.7117328, longitude: -49.2825592 } } >
-                <Image style={styles.avatar} source={{ uri: 'https://avatars0.githubusercontent.com/u/34238796?s=460&v=4' }} />
+        <>
+            <MapView initialRegion={currentRegion} style={styles.map}>
+                <Marker coordinate={ { latitude: -16.7117328, longitude: -49.2825592 } } >
+                    <Image style={styles.avatar} source={{ uri: 'https://avatars0.githubusercontent.com/u/34238796?s=460&v=4' }} />
 
-                <Callout onPress={ () => {
-                    navigation.navigate('Profile', { github_username: 'gamonpo' });
-                }}>
-                    <View style={styles.callout}>
-                        <Text style={styles.devName}>Gabriel Monteiro</Text>
-                        <Text style={styles.devBio}>Apaixonado por tecnologias!</Text>
-                        <Text style={styles.devTechs}>ReactJS, React Native, Node.js</Text>
-                    </View>
+                    <Callout onPress={ () => {
+                        navigation.navigate('Profile', { github_username: 'gamonpo' });
+                    }}>
+                        <View style={styles.callout}>
+                            <Text style={styles.devName}>Gabriel Monteiro</Text>
+                            <Text style={styles.devBio}>Apaixonado por tecnologias!</Text>
+                            <Text style={styles.devTechs}>ReactJS, React Native, Node.js</Text>
+                        </View>
 
-                </Callout>
-            </Marker>
-        </MapView>
+                    </Callout>
+                </Marker>
+            </MapView>
+            <View style={styles.searchForm}>
+
+            </View>
+        </>   
     );
 }
 
