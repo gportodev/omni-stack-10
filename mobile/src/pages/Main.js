@@ -9,7 +9,7 @@ function Main({ navigation }) {
 
     useEffect(() => {
         async function loadInitialPosition() {
-            const {granted }= await requestPermissionsAsync();
+            const { granted }= await requestPermissionsAsync();
 
             if (granted) {
                 const { coords } = await getCurrentPositionAsync({
