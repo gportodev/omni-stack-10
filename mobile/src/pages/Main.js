@@ -10,6 +10,7 @@ import api from '../services/api';
 function Main({ navigation }) {
     const [devs, setDevs] = useState([]);
     const [currentRegion, setCurrentRegion] = useState(null);
+    const [techs, setTechs] = useEffect('');
 
     useEffect(() => {
         async function loadInitialPosition() {
@@ -44,7 +45,7 @@ function Main({ navigation }) {
             params: {
                 latitude,
                 longitude,
-                techs: 'ReactJS'
+                techs
             }
         });
 
@@ -98,6 +99,8 @@ function Main({ navigation }) {
                 placeholderTextColor="#999"
                 autoCapitalize="words"
                 autoCorrect={false}
+                value={techs}
+                onChangeText={text => setTechs}
                 />
 
                 <TouchableOpacity onPress={loadDevs} style={styles.loadButton}>
