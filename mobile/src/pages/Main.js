@@ -100,7 +100,7 @@ function Main({ navigation }) {
                 autoCapitalize="words"
                 autoCorrect={false}
                 value={techs}
-                onChangeText={text => setTechs}
+                onChangeText={setTechs}
                 />
 
                 <TouchableOpacity onPress={loadDevs} style={styles.loadButton}>
